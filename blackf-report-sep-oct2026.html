@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقرير تيك توك — Black F | سبتمبر – أكتوبر 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { overflow-x: hidden; max-width: 100%; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Tahoma', Arial, sans-serif; line-height: 1.7; color: #1a1a1a; background: #f8fafc; direction: rtl; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 24px 14px; width: 100%; }
+
+        .header { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 60%, #2d2d2d 100%); color: white; padding: 36px 20px; border-radius: 16px; margin-bottom: 24px; text-align: center; position: relative; overflow: hidden; }
+        .header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(ellipse at center, rgba(255,255,255,0.04) 0%, transparent 60%); }
+        .header .brand { font-size: 36px; font-weight: 900; color: #fff; margin-bottom: 6px; position: relative; letter-spacing: 3px; }
+        .header .brand span { color: #e53935; }
+        .header h1 { font-size: 16px; font-weight: 500; opacity: 0.75; margin-bottom: 6px; position: relative; }
+        .header .date { font-size: 13px; opacity: 0.5; position: relative; }
+        .accent-bar { height: 4px; width: 80px; background: #e53935; margin: 12px auto; border-radius: 2px; }
+        .platform-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); border-radius: 24px; padding: 8px 16px; font-size: 13px; font-weight: 700; margin-top: 12px; position: relative; flex-wrap: wrap; justify-content: center; }
+
+        .section { background: white; border-radius: 12px; padding: 20px 16px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); overflow: hidden; }
+        .section-title { font-size: 18px; font-weight: 700; color: #1a1a1a; margin-bottom: 18px; border-right: 5px solid #e53935; padding-right: 12px; }
+        .sub-title { font-size: 15px; font-weight: 700; margin-bottom: 14px; }
+
+        .metrics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
+        @media (min-width: 600px) { .metrics-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); } }
+        .metric-card { padding: 16px; border-radius: 10px; border: 2px solid #e2e8f0; }
+        .metric-card.dark { background: linear-gradient(135deg, #0a0a0a, #2d2d2d); color: white; border: none; }
+        .metric-card.green { background: linear-gradient(135deg, #1b5e20, #2e7d32); color: white; border: none; }
+        .metric-card.muted { background: #f1f5f9; }
+        .metric-card.gold { background: linear-gradient(135deg, #f57f17, #e65100); color: white; border: none; }
+        .metric-card.tiktok { background: linear-gradient(135deg, #010101, #2d2d2d); color: white; border: none; }
+        .metric-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.75; margin-bottom: 4px; }
+        .metric-value { font-size: 22px; font-weight: 700; line-height: 1.1; }
+        .metric-sub { font-size: 11px; opacity: 0.7; margin-top: 4px; }
+
+        /* CHARTS */
+        .chart-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 16px; }
+        @media (min-width: 820px) { .chart-grid { grid-template-columns: 1fr 1fr; } }
+        .chart-card { background: #f8fafc; border-radius: 10px; padding: 14px 12px 8px; }
+        .chart-card-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+        .chart-card svg { width: 100%; height: auto; display: block; direction: ltr; }
+        .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+        .chip { background: white; border: 1px solid #e2e8f0; border-radius: 20px; padding: 6px 12px; font-size: 12px; color: #334155; }
+        .chip strong { color: #1a1a1a; }
+        .chip.green { background: #f0fdf4; border-color: #bbf7d0; }
+        .chip.purple { background: #faf5ff; border-color: #e9d5ff; }
+        .source-note { font-size: 11px; color: #94a3b8; margin-bottom: 24px; }
+
+        /* PRODUCTS */
+        .product-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px; background: white; border-radius: 8px; margin-bottom: 8px; }
+
+        /* FUNNEL */
+        .funnel { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+        .funnel-row { display: flex; align-items: center; gap: 10px; }
+        .funnel-label { width: 120px; flex-shrink: 0; font-size: 12px; font-weight: 700; color: #334155; }
+        .funnel-bar-wrap { flex: 1; background: #f1f5f9; border-radius: 6px; height: 26px; overflow: hidden; }
+        .funnel-bar { height: 100%; border-radius: 6px; background: linear-gradient(90deg, #1a1a1a, #e53935); display: flex; align-items: center; padding: 0 10px; color: white; font-size: 12px; font-weight: 700; min-width: 48px; }
+        .funnel-rate { width: 62px; flex-shrink: 0; font-size: 11px; color: #64748b; text-align: left; }
+
+        /* COMPARISON TABLE */
+        .cmp-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; min-width: 520px; }
+        .cmp-table th { background: #1a1a1a; color: white; padding: 10px 12px; text-align: right; font-size: 11px; font-weight: 700; }
+        .cmp-table td { padding: 11px 12px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+        .cmp-table tr.group td { background: #f1f5f9; font-weight: 700; font-size: 12px; color: #475569; }
+        .cmp-table tr.key td { background: #f0fdf4; }
+        .up { color: #16a34a; font-weight: 700; }
+        .down { color: #dc2626; font-weight: 700; }
+        .neutral { color: #64748b; font-weight: 600; }
+
+        /* INSIGHT BOXES */
+        .insight-box { border-radius: 10px; padding: 20px; margin-bottom: 16px; border-right: 4px solid; }
+        .insight-box.critical { background: #fff5f5; border-color: #e53935; }
+        .insight-box.warning { background: #fffbeb; border-color: #f59e0b; }
+        .insight-box.success { background: #f0fdf4; border-color: #22c55e; }
+        .insight-box.info { background: #eff6ff; border-color: #2563eb; }
+        .insight-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+        .critical .insight-title { color: #991b1b; }
+        .warning .insight-title { color: #92400e; }
+        .success .insight-title { color: #14532d; }
+        .info .insight-title { color: #1e40af; }
+        .insight-text { font-size: 13px; line-height: 1.7; color: #475569; }
+
+        /* BIDDING */
+        .steps-3 { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 16px; }
+        @media (min-width: 700px) { .steps-3 { grid-template-columns: repeat(3, 1fr); } }
+        .step-box { background: white; border-radius: 10px; padding: 14px; border: 1px solid #ddd6fe; }
+        .step-num { width: 28px; height: 28px; border-radius: 50%; background: #7c3aed; color: white; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
+        .step-title { font-size: 13px; font-weight: 700; color: #4c1d95; margin-bottom: 4px; }
+        .step-text { font-size: 12px; color: #475569; line-height: 1.7; }
+
+        @media (min-width: 600px) {
+            .header .brand { font-size: 48px; }
+            .header h1 { font-size: 20px; }
+            .metric-value { font-size: 28px; }
+            .section { padding: 28px 24px; }
+            .section-title { font-size: 20px; }
+            .funnel-label { width: 150px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="brand">BLACK <span>F</span></div>
+        <h1>تقرير أداء تيك توك + المتجر</h1>
+        <div class="accent-bar"></div>
+        <div class="platform-badge">📱 TikTok Ads · منصة زد · 12 سبتمبر – 12 أكتوبر 2026</div>
+        <div class="date" style="margin-top:14px;">فترة 31 يوماً — سبتمبر / أكتوبر 2026</div>
+    </div>
+
+    <!-- ======================== -->
+    <!-- ZID OVERVIEW -->
+    <!-- ======================== -->
+    <div class="section" style="border-top: 4px solid #7c3aed;">
+        <h2 class="section-title" style="border-color:#7c3aed;">🏪 نتائج المتجر — منصة زد</h2>
+        <p style="font-size:13px;color:#64748b;margin-bottom:20px;">أرقام زد هي المرجع الفعلي للمبيعات، وتشمل جميع مصادر الطلبات خلال الفترة</p>
+
+        <div class="metrics-grid">
+            <div class="metric-card green">
+                <div class="metric-label">إجمالي المبيعات</div>
+                <div class="metric-value">35,743 ر.س</div>
+                <div class="metric-sub">▲ 45.8% عن الفترة السابقة</div>
+            </div>
+            <div class="metric-card dark">
+                <div class="metric-label">عدد الطلبات</div>
+                <div class="metric-value">69 طلب</div>
+                <div class="metric-sub">69 عميلاً · ▲ 43.8%</div>
+            </div>
+            <div class="metric-card muted">
+                <div class="metric-label">إجمالي الزيارات</div>
+                <div class="metric-value">11,670</div>
+                <div class="metric-sub">زيارة للمتجر · ▲ 34.4%</div>
+            </div>
+            <div class="metric-card muted">
+                <div class="metric-label">متوسط قيمة الطلب (AOV)</div>
+                <div class="metric-value">518 ر.س</div>
+                <div class="metric-sub">35,743 ÷ 69 طلب</div>
+            </div>
+            <div class="metric-card muted">
+                <div class="metric-label">معدل التحويل</div>
+                <div class="metric-value">0.59%</div>
+                <div class="metric-sub">69 طلب ÷ 11,670 زيارة</div>
+            </div>
+            <div class="metric-card gold">
+                <div class="metric-label">ROAS الحقيقي (زد ÷ تيك توك)</div>
+                <div class="metric-value">12.57x</div>
+                <div class="metric-sub">35,743 ÷ 2,843 إنفاق</div>
+            </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="sub-title">📈 المبيعات والطلبات عبر الزمن</div>
+        <div class="chip-row">
+            <span class="chip green">🇸🇦 أسبوع اليوم الوطني (20 – 24 سبتمبر): <strong>16 طلباً</strong></span>
+            <span class="chip purple">🚀 آخر 4 أيام (9 – 12 أكتوبر): <strong>21 طلباً</strong> — 30% من طلبات الفترة</span>
+            <span class="chip">📊 المتوسط اليومي: <strong>2.2 طلب</strong> · <strong>1,153 ر.س</strong></span>
+        </div>
+        <div class="chart-grid">
+            <div class="chart-card">
+                <div class="chart-card-title">المبيعات اليومية (ر.س)</div>
+                <svg viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" role="img">
+<defs><linearGradient id="gs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c3aed" stop-opacity="0.35"/><stop offset="1" stop-color="#7c3aed" stop-opacity="0.04"/></linearGradient></defs>
+<rect x="161.5" y="16" width="77.0" height="224" fill="#16a34a" opacity="0.09"/>
+<text x="200.0" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#15803d">اليوم الوطني</text>
+<line x1="46" y1="240.0" x2="508" y2="240.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="244.0" text-anchor="end" font-size="11" fill="#64748b">0</text>
+<line x1="46" y1="184.0" x2="508" y2="184.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="188.0" text-anchor="end" font-size="11" fill="#64748b">800</text>
+<line x1="46" y1="128.0" x2="508" y2="128.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="132.0" text-anchor="end" font-size="11" fill="#64748b">1,600</text>
+<line x1="46" y1="72.0" x2="508" y2="72.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="76.0" text-anchor="end" font-size="11" fill="#64748b">2,400</text>
+<line x1="46" y1="16.0" x2="508" y2="16.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="20.0" text-anchor="end" font-size="11" fill="#64748b">3,200</text>
+<line x1="46.0" y1="240" x2="46.0" y2="245" stroke="#94a3b8"/>
+<text x="42.0" y="260" text-anchor="start" font-size="11" fill="#64748b">12 سبتمبر</text>
+<line x1="123.0" y1="240" x2="123.0" y2="245" stroke="#94a3b8"/>
+<text x="123.0" y="260" text-anchor="middle" font-size="11" fill="#64748b">17 سبتمبر</text>
+<line x1="200.0" y1="240" x2="200.0" y2="245" stroke="#94a3b8"/>
+<text x="200.0" y="260" text-anchor="middle" font-size="11" fill="#64748b">22 سبتمبر</text>
+<line x1="277.0" y1="240" x2="277.0" y2="245" stroke="#94a3b8"/>
+<text x="277.0" y="260" text-anchor="middle" font-size="11" fill="#64748b">27 سبتمبر</text>
+<line x1="354.0" y1="240" x2="354.0" y2="245" stroke="#94a3b8"/>
+<text x="354.0" y="260" text-anchor="middle" font-size="11" fill="#64748b">2 أكتوبر</text>
+<line x1="431.0" y1="240" x2="431.0" y2="245" stroke="#94a3b8"/>
+<text x="431.0" y="260" text-anchor="middle" font-size="11" fill="#64748b">7 أكتوبر</text>
+<line x1="508.0" y1="240" x2="508.0" y2="245" stroke="#94a3b8"/>
+<text x="512.0" y="260" text-anchor="end" font-size="11" fill="#64748b">12 أكتوبر</text>
+<path d="M46.0,86.0 C51.1,137.3 56.3,240.0 61.4,240.0 C66.5,240.0 71.7,86.0 76.8,86.0 C81.9,86.0 87.1,226.0 92.2,226.0 C97.3,226.0 102.5,226.0 107.6,219.0 C112.7,212.0 117.9,86.0 123.0,86.0 C128.1,86.0 133.3,163.0 138.4,163.0 C143.5,163.0 148.7,163.0 153.8,163.0 C158.9,163.0 164.1,86.0 169.2,86.0 C174.3,86.0 179.5,166.5 184.6,166.5 C189.7,166.5 194.9,51.0 200.0,51.0 C205.1,51.0 210.3,109.3 215.4,128.0 C220.5,146.7 225.7,144.3 230.8,163.0 C235.9,181.7 241.1,240.0 246.2,240.0 C251.3,240.0 256.5,240.0 261.6,240.0 C266.7,240.0 271.9,240.0 277.0,240.0 C282.1,240.0 287.3,185.7 292.4,163.0 C297.5,140.2 302.7,103.5 307.8,103.5 C312.9,103.5 318.1,240.0 323.2,240.0 C328.3,240.0 333.5,163.0 338.6,163.0 C343.7,163.0 348.9,240.0 354.0,240.0 C359.1,240.0 364.3,163.0 369.4,163.0 C374.5,163.0 379.7,188.7 384.8,201.5 C389.9,214.3 395.1,240.0 400.2,240.0 C405.3,240.0 410.5,228.3 415.6,219.0 C420.7,209.7 425.9,184.0 431.0,184.0 C436.1,184.0 441.3,240.0 446.4,240.0 C451.5,240.0 456.7,68.5 461.8,51.0 C466.9,33.5 472.1,33.5 477.2,33.5 C482.3,33.5 487.5,89.5 492.6,89.5 C497.7,89.5 502.9,52.2 508.0,33.5 L508.0,240 L46.0,240 Z" fill="url(#gs)"/>
+<path d="M46.0,86.0 C51.1,137.3 56.3,240.0 61.4,240.0 C66.5,240.0 71.7,86.0 76.8,86.0 C81.9,86.0 87.1,226.0 92.2,226.0 C97.3,226.0 102.5,226.0 107.6,219.0 C112.7,212.0 117.9,86.0 123.0,86.0 C128.1,86.0 133.3,163.0 138.4,163.0 C143.5,163.0 148.7,163.0 153.8,163.0 C158.9,163.0 164.1,86.0 169.2,86.0 C174.3,86.0 179.5,166.5 184.6,166.5 C189.7,166.5 194.9,51.0 200.0,51.0 C205.1,51.0 210.3,109.3 215.4,128.0 C220.5,146.7 225.7,144.3 230.8,163.0 C235.9,181.7 241.1,240.0 246.2,240.0 C251.3,240.0 256.5,240.0 261.6,240.0 C266.7,240.0 271.9,240.0 277.0,240.0 C282.1,240.0 287.3,185.7 292.4,163.0 C297.5,140.2 302.7,103.5 307.8,103.5 C312.9,103.5 318.1,240.0 323.2,240.0 C328.3,240.0 333.5,163.0 338.6,163.0 C343.7,163.0 348.9,240.0 354.0,240.0 C359.1,240.0 364.3,163.0 369.4,163.0 C374.5,163.0 379.7,188.7 384.8,201.5 C389.9,214.3 395.1,240.0 400.2,240.0 C405.3,240.0 410.5,228.3 415.6,219.0 C420.7,209.7 425.9,184.0 431.0,184.0 C436.1,184.0 441.3,240.0 446.4,240.0 C451.5,240.0 456.7,68.5 461.8,51.0 C466.9,33.5 472.1,33.5 477.2,33.5 C482.3,33.5 487.5,89.5 492.6,89.5 C497.7,89.5 502.9,52.2 508.0,33.5" fill="none" stroke="#6d28d9" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>
+            </div>
+            <div class="chart-card">
+                <div class="chart-card-title">عدد الطلبات اليومية</div>
+                <svg viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" role="img">
+<defs><linearGradient id="go" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c3aed" stop-opacity="0.35"/><stop offset="1" stop-color="#7c3aed" stop-opacity="0.04"/></linearGradient></defs>
+<rect x="161.5" y="16" width="77.0" height="224" fill="#16a34a" opacity="0.09"/>
+<text x="200.0" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#15803d">اليوم الوطني</text>
+<line x1="46" y1="240.0" x2="508" y2="240.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="244.0" text-anchor="end" font-size="11" fill="#64748b">0</text>
+<line x1="46" y1="165.3" x2="508" y2="165.3" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="169.3" text-anchor="end" font-size="11" fill="#64748b">2</text>
+<line x1="46" y1="90.7" x2="508" y2="90.7" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="94.7" text-anchor="end" font-size="11" fill="#64748b">4</text>
+<line x1="46" y1="16.0" x2="508" y2="16.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="38" y="20.0" text-anchor="end" font-size="11" fill="#64748b">6</text>
+<line x1="46.0" y1="240" x2="46.0" y2="245" stroke="#94a3b8"/>
+<text x="42.0" y="260" text-anchor="start" font-size="11" fill="#64748b">12 سبتمبر</text>
+<line x1="123.0" y1="240" x2="123.0" y2="245" stroke="#94a3b8"/>
+<text x="123.0" y="260" text-anchor="middle" font-size="11" fill="#64748b">17 سبتمبر</text>
+<line x1="200.0" y1="240" x2="200.0" y2="245" stroke="#94a3b8"/>
+<text x="200.0" y="260" text-anchor="middle" font-size="11" fill="#64748b">22 سبتمبر</text>
+<line x1="277.0" y1="240" x2="277.0" y2="245" stroke="#94a3b8"/>
+<text x="277.0" y="260" text-anchor="middle" font-size="11" fill="#64748b">27 سبتمبر</text>
+<line x1="354.0" y1="240" x2="354.0" y2="245" stroke="#94a3b8"/>
+<text x="354.0" y="260" text-anchor="middle" font-size="11" fill="#64748b">2 أكتوبر</text>
+<line x1="431.0" y1="240" x2="431.0" y2="245" stroke="#94a3b8"/>
+<text x="431.0" y="260" text-anchor="middle" font-size="11" fill="#64748b">7 أكتوبر</text>
+<line x1="508.0" y1="240" x2="508.0" y2="245" stroke="#94a3b8"/>
+<text x="512.0" y="260" text-anchor="end" font-size="11" fill="#64748b">12 أكتوبر</text>
+<path d="M46.0,90.7 C51.1,140.4 56.3,240.0 61.4,240.0 C66.5,240.0 71.7,90.7 76.8,90.7 C81.9,90.7 87.1,202.7 92.2,202.7 C97.3,202.7 102.5,202.7 107.6,202.7 C112.7,202.7 117.9,90.7 123.0,90.7 C128.1,90.7 133.3,165.3 138.4,165.3 C143.5,165.3 148.7,165.3 153.8,165.3 C158.9,165.3 164.1,90.7 169.2,90.7 C174.3,90.7 179.5,165.3 184.6,165.3 C189.7,165.3 194.9,53.3 200.0,53.3 C205.1,53.3 210.3,109.3 215.4,128.0 C220.5,146.7 225.7,146.7 230.8,165.3 C235.9,184.0 241.1,240.0 246.2,240.0 C251.3,240.0 256.5,240.0 261.6,240.0 C266.7,240.0 271.9,240.0 277.0,240.0 C282.1,240.0 287.3,190.2 292.4,165.3 C297.5,140.4 302.7,90.7 307.8,90.7 C312.9,90.7 318.1,240.0 323.2,240.0 C328.3,240.0 333.5,165.3 338.6,165.3 C343.7,165.3 348.9,240.0 354.0,240.0 C359.1,240.0 364.3,165.3 369.4,165.3 C374.5,165.3 379.7,190.2 384.8,202.7 C389.9,215.1 395.1,240.0 400.2,240.0 C405.3,240.0 410.5,215.1 415.6,202.7 C420.7,190.2 425.9,165.3 431.0,165.3 C436.1,165.3 441.3,240.0 446.4,240.0 C451.5,240.0 456.7,90.7 461.8,53.3 C466.9,16.0 472.1,16.0 477.2,16.0 C482.3,16.0 487.5,90.7 492.6,90.7 C497.7,90.7 502.9,40.9 508.0,16.0 L508.0,240 L46.0,240 Z" fill="url(#go)"/>
+<path d="M46.0,90.7 C51.1,140.4 56.3,240.0 61.4,240.0 C66.5,240.0 71.7,90.7 76.8,90.7 C81.9,90.7 87.1,202.7 92.2,202.7 C97.3,202.7 102.5,202.7 107.6,202.7 C112.7,202.7 117.9,90.7 123.0,90.7 C128.1,90.7 133.3,165.3 138.4,165.3 C143.5,165.3 148.7,165.3 153.8,165.3 C158.9,165.3 164.1,90.7 169.2,90.7 C174.3,90.7 179.5,165.3 184.6,165.3 C189.7,165.3 194.9,53.3 200.0,53.3 C205.1,53.3 210.3,109.3 215.4,128.0 C220.5,146.7 225.7,146.7 230.8,165.3 C235.9,184.0 241.1,240.0 246.2,240.0 C251.3,240.0 256.5,240.0 261.6,240.0 C266.7,240.0 271.9,240.0 277.0,240.0 C282.1,240.0 287.3,190.2 292.4,165.3 C297.5,140.4 302.7,90.7 307.8,90.7 C312.9,90.7 318.1,240.0 323.2,240.0 C328.3,240.0 333.5,165.3 338.6,165.3 C343.7,165.3 348.9,240.0 354.0,240.0 C359.1,240.0 364.3,165.3 369.4,165.3 C374.5,165.3 379.7,190.2 384.8,202.7 C389.9,215.1 395.1,240.0 400.2,240.0 C405.3,240.0 410.5,215.1 415.6,202.7 C420.7,190.2 425.9,165.3 431.0,165.3 C436.1,165.3 441.3,240.0 446.4,240.0 C451.5,240.0 456.7,90.7 461.8,53.3 C466.9,16.0 472.1,16.0 477.2,16.0 C482.3,16.0 487.5,90.7 492.6,90.7 C497.7,90.7 502.9,40.9 508.0,16.0" fill="none" stroke="#6d28d9" stroke-width="2.5" stroke-linejoin="round"/>
+<circle cx="200.0" cy="53.3" r="3.5" fill="#6d28d9" stroke="white" stroke-width="1.5"/>
+<text x="200.0" y="45.3" text-anchor="middle" font-size="11" font-weight="700" fill="#1a1a1a">5</text>
+<circle cx="477.2" cy="16.0" r="3.5" fill="#6d28d9" stroke="white" stroke-width="1.5"/>
+<text x="477.2" y="8.0" text-anchor="middle" font-size="11" font-weight="700" fill="#1a1a1a">6</text>
+<circle cx="508.0" cy="16.0" r="3.5" fill="#6d28d9" stroke="white" stroke-width="1.5"/>
+<text x="508.0" y="8.0" text-anchor="middle" font-size="11" font-weight="700" fill="#1a1a1a">6</text>
+</svg>
+            </div>
+        </div>
+        <div class="source-note">المصدر: لوحة تحكم زد — 12 سبتمبر – 12 أكتوبر 2026</div>
+
+        <!-- PRODUCTS -->
+        <div class="sub-title">🏆 المنتجات الأكثر مبيعاً</div>
+        <div style="padding:16px;background:#f8fafc;border-radius:10px;">
+            <div class="product-row" style="border-right:4px solid #e53935;">
+                <div><div style="font-size:13px;font-weight:700;">بروجكتر أُفُق — hy350 max</div><div style="font-size:11px;color:#64748b;">النجم الأول — 62 من أصل 69 قطعة</div></div>
+                <div style="text-align:center;"><div style="font-size:20px;font-weight:700;color:#e53935;">62</div><div style="font-size:10px;color:#64748b;">قطعة</div></div>
+                <div style="text-align:left;"><div style="font-size:14px;font-weight:700;">33,418 ر.س</div><div style="font-size:10px;color:#64748b;">93.5% من المبيعات</div></div>
+            </div>
+            <div class="product-row" style="border-right:4px solid #7c3aed;margin-bottom:0;">
+                <div><div style="font-size:13px;font-weight:700;">بروجكتر hy300 pro (الإصدار الثاني 2.0)</div><div style="font-size:11px;color:#64748b;">المنتج الثاني</div></div>
+                <div style="text-align:center;"><div style="font-size:20px;font-weight:700;color:#7c3aed;">7</div><div style="font-size:10px;color:#64748b;">قطع</div></div>
+                <div style="text-align:left;"><div style="font-size:14px;font-weight:700;">2,093 ر.س</div><div style="font-size:10px;color:#64748b;">5.9% من المبيعات</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== -->
+    <!-- TIKTOK ADS -->
+    <!-- ======================== -->
+    <div class="section" style="border-top: 4px solid #000;">
+        <h2 class="section-title" style="border-color:#000;">📱 أداء تيك توك — 12 سبتمبر – 12 أكتوبر</h2>
+
+        <div class="metrics-grid">
+            <div class="metric-card tiktok">
+                <div class="metric-label">إجمالي الإنفاق</div>
+                <div class="metric-value">2,843 ر.س</div>
+                <div class="metric-sub">CPM: 15.54 ر.س</div>
+            </div>
+            <div class="metric-card dark">
+                <div class="metric-label">عدد مرات الظهور</div>
+                <div class="metric-value">183,039</div>
+                <div class="metric-sub">Impressions</div>
+            </div>
+            <div class="metric-card muted">
+                <div class="metric-label">عدد النقرات</div>
+                <div class="metric-value">5,822</div>
+                <div class="metric-sub">CTR: 3.18% · CPC: 0.49 ر.س</div>
+            </div>
+            <div class="metric-card muted">
+                <div class="metric-label">الزيارات</div>
+                <div class="metric-value">8,213</div>
+                <div class="metric-sub">Page Views</div>
+            </div>
+            <div class="metric-card muted">
+                <div class="metric-label">مشاهدات المنتج</div>
+                <div class="metric-value">6,224</div>
+                <div class="metric-sub">Content Views</div>
+            </div>
+            <div class="metric-card muted">
+                <div class="metric-label">إضافات السلة</div>
+                <div class="metric-value">251</div>
+                <div class="metric-sub">Adds to Cart</div>
+            </div>
+            <div class="metric-card muted">
+                <div class="metric-label">إضافة بيانات الدفع</div>
+                <div class="metric-value">187</div>
+                <div class="metric-sub">Add Payment Info</div>
+            </div>
+            <div class="metric-card muted">
+                <div class="metric-label">الطلبات</div>
+                <div class="metric-value">48 طلب</div>
+                <div class="metric-sub">تكلفة الطلب: 59.25 ر.س</div>
+            </div>
+            <div class="metric-card green">
+                <div class="metric-label">قيمة الطلبات</div>
+                <div class="metric-value">24,866 ر.س</div>
+                <div class="metric-sub">Purchase Value</div>
+            </div>
+            <div class="metric-card gold">
+                <div class="metric-label">العائد من الإنفاق</div>
+                <div class="metric-value">8.74x</div>
+                <div class="metric-sub">ROAS — 24,866 ÷ 2,843 ر.س</div>
+            </div>
+        </div>
+
+        <!-- Funnel -->
+        <div class="sub-title">🔻 مسار العميل داخل المتجر</div>
+        <div class="funnel">
+            <div class="funnel-row">
+                <div class="funnel-label">مشاهدات المنتج</div>
+                <div class="funnel-bar-wrap"><div class="funnel-bar" style="width:100%;">6,224</div></div>
+                <div class="funnel-rate">—</div>
+            </div>
+            <div class="funnel-row">
+                <div class="funnel-label">إضافة للسلة</div>
+                <div class="funnel-bar-wrap"><div class="funnel-bar" style="width:40%;">251</div></div>
+                <div class="funnel-rate">4.0%</div>
+            </div>
+            <div class="funnel-row">
+                <div class="funnel-label">إضافة بيانات الدفع</div>
+                <div class="funnel-bar-wrap"><div class="funnel-bar" style="width:30%;">187</div></div>
+                <div class="funnel-rate">74.5%</div>
+            </div>
+            <div class="funnel-row">
+                <div class="funnel-label">إتمام الشراء</div>
+                <div class="funnel-bar-wrap"><div class="funnel-bar" style="width:12%;">48</div></div>
+                <div class="funnel-rate">25.7%</div>
+            </div>
+        </div>
+        <p style="font-size:11px;color:#94a3b8;margin-bottom:16px;">النسبة بجانب كل مرحلة = نسبة الانتقال من المرحلة السابقة · أطوال الأشرطة توضيحية</p>
+
+        <div style="padding:16px 20px;background:linear-gradient(135deg,#0a0a0a,#1a1a1a);border-radius:10px;color:white;font-size:13px;line-height:1.9;">
+            <strong style="color:#c4b5fd;">📌 ملاحظة — ROAS الحقيقي أعلى:</strong> سجّل تيك توك 48 طلباً بقيمة 24,866 ر.س (ROAS 8.74x)، بينما تُظهر زد 69 طلباً بقيمة 35,743 ر.س، ليبلغ الـ ROAS الحقيقي <strong style="color:#86efac;">12.57x</strong>. ويعود الفرق إلى فجوة الـ Pixel وتأخر الإسناد (Attribution)، إضافةً إلى الطلبات الواردة من مصادر أخرى.
+        </div>
+    </div>
+
+    <!-- ======================== -->
+    <!-- BIDDING STRATEGY TEST -->
+    <!-- ======================== -->
+    <div class="section" style="border-top: 4px solid #7c3aed;">
+        <h2 class="section-title" style="border-color:#7c3aed;">🧪 اختبار استراتيجية مزايدة جديدة</h2>
+        <p style="font-size:13px;color:#475569;line-height:1.9;margin-bottom:16px;">تم خلال هذه الفترة اعتماد حملة اختبارية تعمل باستراتيجية مزايدة (Bidding Strategy) مختلفة عن الحملة الأساسية، بهدف الوصول إلى الطلبات بتكلفة أقل.</p>
+
+        <div class="steps-3">
+            <div class="step-box">
+                <div class="step-num">1</div>
+                <div class="step-title">المزاد</div>
+                <div class="step-text">كل ظهور إعلاني هو مزاد لحظي يتنافس فيه المعلنون على الوصول إلى المستخدم نفسه.</div>
+            </div>
+            <div class="step-box">
+                <div class="step-num">2</div>
+                <div class="step-title">استراتيجية المزايدة</div>
+                <div class="step-text">هي القاعدة التي تحدد للمنصة كيف تزايد: على أي مستخدم، وبأي سعر، ولأي هدف.</div>
+            </div>
+            <div class="step-box">
+                <div class="step-num">3</div>
+                <div class="step-title">النتيجة</div>
+                <div class="step-text">تغيير القاعدة يغيّر نوعية الجمهور الذي تصل إليه الحملة، وبالتالي تكلفة الطلب.</div>
+            </div>
+        </div>
+
+        <div class="insight-box success" style="margin-bottom:0;">
+            <div class="insight-title">✅ نتيجة الاختبار: عائد جيد بتكلفة طلب أقل</div>
+            <div class="insight-text">حققت الحملة الاختبارية عائداً جيداً بتكلفة طلب أقل من الحملة الأساسية، ما يجعلها مساراً ثانياً موثوقاً للميزانية. كما أن وجود حملتين نشطتين يقلل من الاعتماد على حملة واحدة، ويحمي الأداء من التوقف في حال واجهت إحداهما أي عائق.</div>
+        </div>
+    </div>
+
+    <!-- ======================== -->
+    <!-- NATIONAL DAY -->
+    <!-- ======================== -->
+    <div class="section" style="border-top: 4px solid #16a34a;">
+        <h2 class="section-title" style="border-color:#16a34a;">🇸🇦 اليوم الوطني السعودي — قراءة النتائج</h2>
+        <div style="padding:20px;background:linear-gradient(135deg,#052e16,#14532d);border-radius:14px;color:white;">
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;text-align:center;">
+                <div><div style="font-size:24px;font-weight:700;color:#86efac;">16</div><div style="font-size:11px;opacity:0.75;">طلباً خلال 20 – 24 سبتمبر</div></div>
+                <div><div style="font-size:24px;font-weight:700;color:#86efac;">3.2</div><div style="font-size:11px;opacity:0.75;">طلب يومياً مقابل 2.2 لمتوسط الفترة</div></div>
+                <div><div style="font-size:24px;font-weight:700;color:#86efac;">5</div><div style="font-size:11px;opacity:0.75;">طلبات في ذروة 22 سبتمبر</div></div>
+            </div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.9;">
+                تم استغلال موسم اليوم الوطني بالاعتماد على المحتوى الإعلاني الحالي، رغم عدم توفّر محتوى مخصص للمناسبة، وارتفع متوسط الطلبات اليومية خلال أسبوع المناسبة بنحو 45% عن متوسط الفترة. ويشير ذلك إلى أن توفير <strong style="color:#fde68a;">محتوى مخصص قبل المواسم بوقت كافٍ</strong> سيرفع حجم الاستفادة منها، وفي مقدمتها موسم <strong style="color:#fde68a;">الجمعة البيضاء</strong> في نوفمبر.
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== -->
+    <!-- COMPARISON -->
+    <!-- ======================== -->
+    <div class="section" style="border-top: 4px solid #0891b2;">
+        <h2 class="section-title" style="border-color:#0891b2;">📊 مقارنة الفترتين</h2>
+        <p style="font-size:13px;color:#64748b;margin-bottom:16px;">الفترة السابقة: 27 يونيو – 31 يوليو (35 يوماً) · الفترة الحالية: 12 سبتمبر – 12 أكتوبر (31 يوماً)</p>
+
+        <div style="overflow-x:auto;">
+        <table class="cmp-table">
+            <thead>
+                <tr><th>المؤشر</th><th>يونيو – يوليو</th><th>سبتمبر – أكتوبر</th><th>التغيّر</th></tr>
+            </thead>
+            <tbody>
+                <tr class="group"><td colspan="4">📱 تيك توك</td></tr>
+                <tr><td><strong>إجمالي الإنفاق</strong></td><td>2,262 ر.س</td><td>2,843 ر.س</td><td class="neutral">▲ 25.7%</td></tr>
+                <tr><td><strong>عدد مرات الظهور</strong></td><td>163,033</td><td>183,039</td><td class="up">▲ 12.3%</td></tr>
+                <tr><td><strong>عدد النقرات</strong></td><td>4,438</td><td>5,822</td><td class="up">▲ 31.2%</td></tr>
+                <tr><td><strong>تكلفة النقرة</strong></td><td>0.51 ر.س</td><td>0.49 ر.س</td><td class="up">▼ 3.9%</td></tr>
+                <tr><td><strong>نسبة النقر (CTR)</strong></td><td>2.72%</td><td>3.18%</td><td class="up">▲ 0.46 نقطة</td></tr>
+                <tr><td><strong>تكلفة الألف ظهور (CPM)</strong></td><td>13.87 ر.س</td><td>15.54 ر.س</td><td class="down">▲ 12.0%</td></tr>
+                <tr><td><strong>الزيارات</strong></td><td>6,320</td><td>8,213</td><td class="up">▲ 30.0%</td></tr>
+                <tr><td><strong>الإضافات للسلة</strong></td><td>142</td><td>251</td><td class="up">▲ 76.8%</td></tr>
+                <tr><td><strong>عدد الطلبات</strong></td><td>31 طلب</td><td>48 طلب</td><td class="up">▲ 54.8%</td></tr>
+                <tr><td><strong>تكلفة الطلب</strong></td><td>72.9 ر.س</td><td>59.25 ر.س</td><td class="up">▼ 18.7%</td></tr>
+                <tr><td><strong>قيمة الطلبات</strong></td><td>15,125 ر.س</td><td>24,866 ر.س</td><td class="up">▲ 64.4%</td></tr>
+                <tr class="key"><td><strong>العائد من الإنفاق (ROAS)</strong></td><td>6.68x</td><td><strong>8.74x</strong></td><td class="up">▲ 30.8%</td></tr>
+                <tr class="group"><td colspan="4">🏪 زد</td></tr>
+                <tr><td><strong>إجمالي المبيعات</strong></td><td>24,522 ر.س</td><td>35,743 ر.س</td><td class="up">▲ 45.8%</td></tr>
+                <tr><td><strong>عدد الطلبات</strong></td><td>48 طلب</td><td>69 طلب</td><td class="up">▲ 43.8%</td></tr>
+                <tr><td><strong>الزيارات</strong></td><td>8,680</td><td>11,670</td><td class="up">▲ 34.4%</td></tr>
+                <tr><td><strong>متوسط قيمة الطلب</strong></td><td>511 ر.س</td><td>518 ر.س</td><td class="up">▲ 1.4%</td></tr>
+                <tr><td><strong>معدل التحويل</strong></td><td>0.55%</td><td>0.59%</td><td class="up">▲ 0.04 نقطة</td></tr>
+                <tr class="key"><td><strong>ROAS الحقيقي</strong></td><td>10.84x</td><td><strong>12.57x</strong></td><td class="up">▲ 16.0%</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <div style="margin-top:20px;">
+            <div class="insight-box success">
+                <div class="insight-title">✅ نمو في الحجم والكفاءة معاً</div>
+                <div class="insight-text">ارتفع الإنفاق بنسبة 25.7%، فارتفعت طلبات تيك توك بنسبة 54.8% وانخفضت تكلفة الطلب من 72.9 إلى <strong>59.25 ر.س</strong>. أي أن زيادة الميزانية لم تؤثر على الكفاءة، بل تحسّنت معها.</div>
+            </div>
+            <div class="insight-box info">
+                <div class="insight-title">📅 النمو الفعلي أكبر — الفترة الحالية أقصر بـ 4 أيام</div>
+                <div class="insight-text">على أساس يومي، ارتفع متوسط الطلبات من 1.4 إلى <strong>2.2 طلب يومياً</strong> (▲ 62%)، ومتوسط المبيعات من 701 إلى <strong>1,153 ر.س يومياً</strong> (▲ 64.6%).</div>
+            </div>
+            <div class="insight-box info" style="margin-bottom:0;">
+                <div class="insight-title">💡 تفاعل أعلى مع الإعلانات</div>
+                <div class="insight-text">ارتفع CTR إلى 3.18% وقفزت الإضافات للسلة بنسبة 76.8%، ما يدل على أن الجمهور الذي تصل إليه الإعلانات أكثر اهتماماً بالمنتج.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== -->
+    <!-- NOTES -->
+    <!-- ======================== -->
+    <div class="section" style="border-top: 4px solid #e53935;">
+        <h2 class="section-title" style="border-color:#e53935;">🔴 الملاحظات والفرص</h2>
+
+        <div class="insight-box warning">
+            <div class="insight-title">⚠️ الاعتماد على منتج واحد</div>
+            <div class="insight-text">يمثّل بروجكتر hy350 max نسبة 93.5% من المبيعات. وأي نقص في المخزون أو تراجع في الطلب عليه سينعكس مباشرة على إجمالي المبيعات.</div>
+        </div>
+
+        <div class="insight-box info">
+            <div class="insight-title">🔁 Retargeting — فرصة لا تزال قائمة</div>
+            <div class="insight-text">وصل 187 شخصاً إلى مرحلة إدخال بيانات الدفع، أتمّ منهم 48 فقط عملية الشراء على تيك توك. أي أن 139 شخصاً كانوا على بُعد خطوة واحدة من الشراء، واستهدافهم أقل تكلفة بكثير من استقطاب عميل جديد.</div>
+        </div>
+
+        <div class="insight-box warning" style="margin-bottom:0;">
+            <div class="insight-title">📈 ارتفاع تكلفة الظهور مع اقتراب الموسم</div>
+            <div class="insight-text">ارتفع الـ CPM بنسبة 12%، وهو ارتفاع متوقع مع دخول الربع الأخير، ومن المرجح أن يرتفع أكثر خلال موسم الجمعة البيضاء مع زيادة المنافسة على المزادات.</div>
+        </div>
+    </div>
+
+    <!-- ======================== -->
+    <!-- NEXT STEPS -->
+    <!-- ======================== -->
+    <div class="section" style="border-top: 4px solid #1b5e20;">
+        <h2 class="section-title" style="border-color:#1b5e20;">🎯 الخطوات القادمة — أولويات أكتوبر – نوفمبر</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+            <div style="padding:16px;background:#fff5f5;border-radius:10px;border-right:4px solid #e53935;">
+                <div style="font-size:13px;font-weight:700;color:#991b1b;margin-bottom:8px;">1. العمل على رفع الميزانية تدريجياً</div>
+                <div style="font-size:12px;color:#7f1d1d;line-height:1.7;">بناءً على ROAS بلغ 8.74x وتكلفة طلب 59.25 ر.س، رفع الميزانية بنسبة 20-30% كل 3-4 أيام مع متابعة تكلفة الطلب.</div>
+            </div>
+            <div style="padding:16px;background:#fdf4ff;border-radius:10px;border-right:4px solid #9333ea;">
+                <div style="font-size:13px;font-weight:700;color:#6b21a8;margin-bottom:8px;">2. العمل على توسيع الاستراتيجية الجديدة</div>
+                <div style="font-size:12px;color:#581c87;line-height:1.7;">توجيه حصة أكبر من الميزانية تدريجياً إلى الحملة الاختبارية، ما دامت تحافظ على تكلفة طلب أقل من الحملة الأساسية.</div>
+            </div>
+            <div style="padding:16px;background:#fffbeb;border-radius:10px;border-right:4px solid #f59e0b;">
+                <div style="font-size:13px;font-weight:700;color:#92400e;margin-bottom:8px;">3. العمل على تفعيل Retargeting</div>
+                <div style="font-size:12px;color:#78350f;line-height:1.7;">استهداف 139 شخصاً وصلوا إلى مرحلة الدفع دون إتمام الشراء، بإعلان مخصص منخفض التكلفة.</div>
+            </div>
+            <div style="padding:16px;background:linear-gradient(135deg,#fff7ed,#fef3c7);border-radius:10px;border-right:4px solid #f97316;">
+                <div style="font-size:13px;font-weight:700;color:#9a3412;margin-bottom:8px;">4. توفير محتوى موسم الجمعة البيضاء</div>
+                <div style="font-size:12px;color:#7c2d12;line-height:1.7;">توفير 3-5 فيديوهات مخصصة قبل نوفمبر بوقت كافٍ (عرض المنتج، مقارنة، عرض خاص)، للاستفادة من الموسم بشكل أكبر من اليوم الوطني.</div>
+            </div>
+            <div style="padding:16px;background:#f0fdf4;border-radius:10px;border-right:4px solid #22c55e;">
+                <div style="font-size:13px;font-weight:700;color:#14532d;margin-bottom:8px;">5. العمل على تنشيط المنتجات الأخرى</div>
+                <div style="font-size:12px;color:#064e3b;line-height:1.7;">إعلانات مخصصة لبروجكتر hy300 pro لتقليل الاعتماد على منتج واحد وفتح شريحة سعرية أقل.</div>
+            </div>
+            <div style="padding:16px;background:linear-gradient(135deg,#eff6ff,#dbeafe);border-radius:10px;border-right:4px solid #2563eb;">
+                <div style="font-size:13px;font-weight:700;color:#1e40af;margin-bottom:8px;">6. 🔵 العمل على التوسع إلى Google Ads</div>
+                <div style="font-size:12px;color:#1e3a8a;line-height:1.7;">الوصول إلى العملاء الذين يبحثون فعلياً عن "بروجكتر" عبر حملات البحث والتسوق، والتقاط الطلب الذي تولّده إعلانات تيك توك بدلاً من خسارته لصالح المنافسين، مع تنويع مصادر الزيارات قبل موسم الجمعة البيضاء.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div style="text-align:center;padding:20px;color:#94a3b8;font-size:12px;">
+        تقرير تيك توك — Black F | 12 سبتمبر – 12 أكتوبر 2026 · تم الإعداد بتاريخ 15 أكتوبر 2026
+    </div>
+
+</div>
+</body>
+</html>
